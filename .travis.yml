@@ -53,8 +53,8 @@ install:
 
 # run tests
 script:
-  - py.test --cov numkit numkit/tests
-  - py.test --cov gromacs gromacs/tests
+  - py.test -s --cov numkit numkit/tests
+  - py.test -s --cov gromacs gromacs/tests
 
 after_success:
   - codecov
