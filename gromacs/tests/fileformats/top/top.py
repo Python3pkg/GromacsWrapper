@@ -160,7 +160,7 @@ class TopologyTest(object):
                 processed = self.processed
                 with tmpdir.as_cwd():
                         tpr = grompp(f, c, processed, prefix="reference")
-                        reference_trr = mdrun(tpr, prefix="reference")
+                        reference_trr = mdrun(tpr, prefix="reference", nt=2)
                         df1 = rerun_energy(tpr, reference_trr, prefix="reference")
 
                         scaled = "scaled.top"
