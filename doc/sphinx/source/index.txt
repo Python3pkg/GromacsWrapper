@@ -59,8 +59,6 @@ Contents
    installation
    configuration
    gromacs
-   analysis
-   auxiliary
    alternatives
 
 

@@ -11,8 +11,7 @@
 
 A primitive wrapper around the Gromacs tools until we have proper
 python bindings. It also provides a small library (cook book) of
-often-used recipes and an optional analysis module with plugins for
-more complicated analysis tasks.
+often-used recipes and helper functions to set up MD simulations.
 
 `Documentation`_ is mostly provided through the python doc strings and
 available at http://gromacswrapper.readthedocs.org for recent releases.
@@ -49,14 +48,7 @@ the `GNU Public License v3`_ (or any higher version at your choice)
 except as noted below. See the file COPYING for the licensing terms
 for all modules.
 
-The **vmd** module is made available under the `LGPL v3`_ (see COPYING
-and COPYING.LESSER). **numkit** is provided under the "`Modified BSD
-Licence`_" (as it contains some code from scipy_).
-
 .. _GNU Public License v3: http://www.gnu.org/licenses/gpl.html
-.. _LGPL v3: http://www.gnu.org/licenses/lgpl.html
-.. _Modified BSD Licence: http://www.opensource.org/licenses/bsd-license.php
-.. _scipy: http://www.scipy.org
 
 The distribution contains third party software that is copyrighted by
 the authors but distributed under licences compatible with this

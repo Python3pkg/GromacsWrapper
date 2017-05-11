@@ -20,7 +20,7 @@ version = imp.load_source('gromacs.version', version_file).get_version()
 
 setup(name="GromacsWrapper",
       version=version,
-      description="A python wrapper around the gromacs tools.",
+      description="A python wrapper around the Gromacs tools.",
       long_description=long_description,
       author="Oliver Beckstein",
       author_email="orbeckst@gmail.com",
@@ -40,7 +40,7 @@ setup(name="GromacsWrapper",
                    'Topic :: Software Development :: Libraries :: Python Modules',
                    ],
       packages=find_packages(exclude=['tests','scripts','extras','doc/examples']),
-      scripts = ['scripts/gw-fit_strip_trajectories.py',
+      scripts = [
                  'scripts/gw-join_parts.py',
                  'scripts/gw-merge_topologies.py',
                  'scripts/gw-forcefield.py',
@@ -54,19 +54,11 @@ setup(name="GromacsWrapper",
                                 'tests/data/fileformats/top/*/*.gro',
                                 'tests/data/*.log',
                                 ],
-                    'vmd': ['*.tcl'],                                  # server start in VMD
                     },
       install_requires = ['numpy>=1.0',
-                          'scipy',        # numkit needs it
                           'six',          # towards py 3 compatibility
+                          'numkit',       # numerical helpers
                           ],              # basic package (w/o analysis)
-      extras_require = {
-                'analysis': ['matplotlib>=0.91.3',
-                             'RecSQL>=0.7',
-                             'pandas',
-                             ],
-                'numkit': ['scipy'],
-                },
       tests_require = ['numpy', 'pandas'],
       zip_safe = True,
 )
