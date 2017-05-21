@@ -192,7 +192,7 @@ Classes and functions
 .. autodata:: queuing_systems
 
 """
-from __future__ import absolute_import, with_statement
+
 
 import os, errno
 import warnings
@@ -398,7 +398,7 @@ def generate_submit_scripts(templates, prefix=None, deffnm='md', jobname='MD', b
                        newname=submitscript)
         ext = os.path.splitext(submitscript)[1]
         if ext in ('.sh', '.csh', '.bash'):
-            os.chmod(submitscript, 0755)
+            os.chmod(submitscript, 0o755)
         return submitscript
 
     return [write_script(template) for template in config.get_templates(templates)]

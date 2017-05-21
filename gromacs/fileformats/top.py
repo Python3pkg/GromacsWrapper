@@ -51,7 +51,7 @@ Write out the scaled down topology::
    Exchange (HREX) simulations. See ``scripts/gw-partial_tempering.py`` for an example.
 
 """
-from __future__ import absolute_import
+
 
 import textwrap
 import logging
@@ -827,12 +827,12 @@ class TOP(blocks.System):
 
             # cmap body
             elif len(line.split()) == 10:
-                cmap_param = map(float, line.replace("\\","").split())
+                cmap_param = list(map(float, line.replace("\\","").split()))
                 cons.gromacs['param'] += cmap_param
 
             # cmaptype cloning line
             elif len(line.split()) == 6:
-                cmap_param = map(float, line.replace("\\","").split())
+                cmap_param = list(map(float, line.replace("\\","").split()))
                 cons.gromacs['param'] += cmap_param
                 self.cmaptypes.append(curr_cons)
             else:
@@ -965,7 +965,7 @@ class SystemToGroTop(object):
         top = top.replace('*IMPROPERTYPES*',  ''.join( self._make_impropertypes(self.system)) )
         top = top.replace('*CMAPTYPES*',      ''.join( self._make_cmaptypes(self.system)) )
 
-        for i,(molname,m) in enumerate(self.system.dict_molname_mol.items()):
+        for i,(molname,m) in enumerate(list(self.system.dict_molname_mol.items())):
 
             itp = self.itptemplate
             itp = itp.replace('*MOLECULETYPE*',  ''.join( self._make_moleculetype(m, molname, m.exclusion_numb))  )

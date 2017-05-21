@@ -35,8 +35,8 @@ source_suffix = '.txt'
 master_doc = 'index'
 
 # General substitutions.
-project = u'GromacsWrapper'
-copyright = u'2009-2016, The Authors of GromacsWrapper (see AUTHORS)'
+project = 'GromacsWrapper'
+copyright = '2009-2016, The Authors of GromacsWrapper (see AUTHORS)'
 
 # The default replacements for |version| and |release|, also used in various
 # other places throughout the built documents.
@@ -159,8 +159,8 @@ htmlhelp_basename = 'GromacsWrapperdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
 latex_documents = [
-  ('index', 'GromacsWrapper.tex', u'GromacsWrapper Documentation',
-   u'Oliver Beckstein', 'manual'),
+  ('index', 'GromacsWrapper.tex', 'GromacsWrapper Documentation',
+   'Oliver Beckstein', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

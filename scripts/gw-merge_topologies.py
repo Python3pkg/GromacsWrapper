@@ -72,7 +72,7 @@ def get_no_atoms(molecule):
   # The first atom has to be '1' 
   assert np.min(atoms) == 1
   # Check if atomnumbering is contigous
-  assert not (range(np.min(atoms), np.max(atoms)+1) - atoms).all()
+  assert not (list(range(np.min(atoms), np.max(atoms)+1)) - atoms).all()
   return len(atoms)
   
 

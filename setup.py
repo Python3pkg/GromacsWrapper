@@ -4,7 +4,7 @@
 #
 # See the files INSTALL and README for details or visit
 # https://github.com/Becksteinlab/GromacsWrapper
-from __future__ import with_statement
+
 from setuptools import setup, find_packages
 
 import imp, os

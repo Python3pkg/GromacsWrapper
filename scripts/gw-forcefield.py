@@ -25,7 +25,7 @@ def scale_angles(mol, angles):
                                         #new_angles.append(at)
                                         new_angles[key] = at
                                 break
-        return new_angles.values()
+        return list(new_angles.values())
 
 
 def scale_dihedrals(mol, dihedrals):
@@ -50,8 +50,8 @@ def scale_dihedrals(mol, dihedrals):
                                         new_dihedrals[key] = dt
                                 break
 
-        print new_dihedrals
-        return new_dihedrals.values()
+        print(new_dihedrals)
+        return list(new_dihedrals.values())
 
 
 def scale_impropers(mol, impropers):
@@ -73,8 +73,8 @@ def scale_impropers(mol, impropers):
                                 for i, imt in enumerate(impropers[key]):
                                         new_impropers[key] = imt
                                 break
-        print new_impropers
-        return new_impropers.values()
+        print(new_impropers)
+        return list(new_impropers.values())
 
 
 parser = argparse.ArgumentParser()
@@ -116,7 +116,7 @@ for dt in top.dihedraltypes:
         name = "{0}-{1}-{2}-{3}-{4}".format(dt.atype1, dt.atype2, dt.atype3, dt.atype4, dt.gromacs['func'])
         if not name in dihedraltypes: dihedraltypes[name] = []
         dihedraltypes[name].append(dt)
-print("Build dihedraltypes dictionary with {0} entries".format(len(dihedraltypes)))
+print(("Build dihedraltypes dictionary with {0} entries".format(len(dihedraltypes))))
 
 #
 # Build improper dictionary
@@ -126,7 +126,7 @@ for it in top.impropertypes:
         name = "{0}-{1}-{2}-{3}-{4}".format(it.atype1, it.atype2, it.atype3, it.atype4, it.gromacs['func'])
         if not name in impropertypes: impropertypes[name] = []
         impropertypes[name].append(it)
-print("Build impropertypes dictionary with {0} entries".format(len(impropertypes)))
+print(("Build impropertypes dictionary with {0} entries".format(len(impropertypes))))
 
 top.angletypes = scale_angles(mol, angletypes)
 top.dihedraltypes = scale_dihedrals(mol, dihedraltypes)
@@ -140,7 +140,7 @@ pairtypes = [pt for pt in top.pairtypes if (pt.atype1 in atomtypes) and (pt.atyp
 top.pairtypes = pairtypes
 
 # Remove non-default moleculetypes
-for k in top.dict_molname_mol.keys():
+for k in list(top.dict_molname_mol.keys()):
         if k in [molname]: continue
         del top.dict_molname_mol[k]
 
